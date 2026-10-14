@@ -23,9 +23,10 @@ export default function ProfileBio() {
 
         {/* TikTok */}
         <a
-          href="#"
+          href="https://www.tiktok.com/@g1lang_117"
           className="w-7 h-7 bg-black hover:bg-gray-900 rounded-full flex items-center justify-center transition-colors border border-gray-700 shadow"
           aria-label="TikTok"
+          target="_blank"
         >
           <FaTiktok />
         </a>

@@ -30,37 +30,41 @@ export default function AssetFeed() {
     <div className="px-4 md:px-0 pt-4 pb-8">
       <div className="grid grid-cols-2 gap-3">
         {ASSETS.map((asset) => (
-          <div key={asset.id} className="flex flex-col gap-2 cursor-pointer group">
+          <a href="https://uni.prd.h5.uni2play.com/prod/landing/?to=uni://unicc.com/world/detail?id=FDFLA9X_264" target="_blank" className="cursor-pointer">
+            <div key={asset.id} className="flex flex-col gap-2 cursor-pointer group">
+              {/* Cover card */}
+              <div className="relative rounded-2xl overflow-hidden">
+                {/* Cover image */}
+                <img
+                  src={asset.cover}
+                  alt={asset.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
 
-            {/* Cover card */}
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-900">
-              {/* Cover image */}
-              <img
-                src={asset.cover}
-                alt={asset.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
+                {/* Dark gradient overlay at bottom */}
+                <div className="absolute inset-0 from-black/70 via-transparent to-transparent" />
 
-              {/* Dark gradient overlay at bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                {/* Badge top-left */}
+                <div className="absolute top-2 left-2 flex bg-yellow-500 rounded-full w-6 h-6 flex items-center justify-center">
+                  <TbArrowBigUpLine className="text-black" />
+                </div>
 
-              {/* Badge top-left */}
-              <div className="absolute top-2 left-2 flex bg-yellow-500 rounded-full w-6 h-6 flex items-center justify-center">
-                <TbArrowBigUpLine className="text-black" />
+                {/* Collect count bottom-left */}
+                <div className="absolute bottom-2 left-2 bg-black/20 py-0.5 px-1 rounded-md flex items-center gap-1 text-white text-xs font-semibold drop-shadow">
+                  <FaEye className="w-3 h-3" />
+                  <span>{asset.collectCount} Collected</span>
+                </div>
               </div>
 
-              {/* Play count bottom-left */}
-              <div className="absolute bottom-2 left-2 flex items-center gap-1 text-white text-xs font-semibold drop-shadow">
-                <FaEye className="w-4 h-4" />
-                <span>{asset.collectCount} Collected</span>
+              {/* Title below card */}
+              <div className="px-0.5 space-y-2 font-semibold">
+                <p className="text-white text-sm line-clamp-2">
+                  {asset.title}
+                </p>
+                <p className="text-xs text-gray-300">Gilang_117</p>
               </div>
             </div>
-
-            {/* Title below card */}
-            <p className="text-white text-sm font-semibold leading-snug px-0.5 line-clamp-2">
-              {asset.title}
-            </p>
-          </div>
+          </a>
         ))}
       </div>
     </div>

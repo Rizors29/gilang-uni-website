@@ -1,4 +1,4 @@
-const TABS = ['Post', 'Games', 'Assets', 'Collects', 'Likes']
+const TABS = ['Post', 'Games', 'Assets', 'Badges', 'Boards']
 
 interface ProfileTabsProps {
   activeTab: string

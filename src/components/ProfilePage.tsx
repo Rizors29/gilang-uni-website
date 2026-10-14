@@ -8,11 +8,14 @@ import GameFeed from './GameFeed'
 import AssetFeed from './AssetFeed'
 import BottomNav from './BottomNav'
 import NavBar from './NavBar'
-import { IoMdMale } from 'react-icons/io'
+
 import WorldBadge from '../assets/world.png'
 import ModelBadge from '../assets/model.png'
-import { IoIosArrowForward } from "react-icons/io";
 import Badges from '../assets/badges.png'
+
+import { IoMdMale } from 'react-icons/io'
+import { IoIosArrowForward } from "react-icons/io";
+import { LuCopy } from "react-icons/lu";
 
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState('Post')
@@ -47,34 +50,27 @@ export default function ProfilePage() {
                   </div>
                   <span className="text-gray-400 text-xs">ID:FDFLA9X</span>
                   <button
-                    className="text-gray-500 hover:text-gray-300 transition-colors"
+                    className="text-gray-500 hover:text-gray-300 transition-colors cursor-pointer"
                     aria-label="Copy ID"
                   >
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="w-3 h-3 fill-none stroke-current"
-                      strokeWidth="2"
-                    >
-                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                    </svg>
+                    <LuCopy className='w-3 h-3' />
                   </button>
                 </div>
                 {/* Badges */}
-                <div className="flex items-center gap-1">
+                <button className="flex items-center gap-1 cursor-pointer">
                   <img src={Badges} alt="Badges" className='w-16' />
                   <IoIosArrowForward className='w-4 h-4 text-white/80' />
-                </div>
+                </button>
               </div>
 
               {/* Creator tags */}
               <div className="flex items-center gap-2 mt-2 flex-wrap">
                 <div className="flex items-center gap-1">
-                  <img src={WorldBadge} alt="World badge" className="w-6 h-6" />
+                  <img src={WorldBadge} alt="World badge" className="w-4 h-4" />
                   <span className="text-white text-sm">Kreator Dunia Bintang</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <img src={ModelBadge} alt="Model badge" className="w-6 h-6" />
+                  <img src={ModelBadge} alt="Model badge" className="w-4 h-4" />
                   <span className="text-white text-sm">Kreator Model Bintang</span>
                 </div>
               </div>
