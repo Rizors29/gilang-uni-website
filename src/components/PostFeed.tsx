@@ -1,11 +1,12 @@
+import post1Img from '../assets/post/post1.png'
+import post2Img from '../assets/post/post2.png'
+import post3Img from '../assets/post/post3.png'
+import profileImg from '../assets/profile.png'
+
 import { useState } from 'react'
 import { AiOutlineLike } from 'react-icons/ai'
 import { IoChatbubbleOutline } from 'react-icons/io5'
 import { PiShareFat } from 'react-icons/pi'
-import post1Img from '../assets/post1.png'
-import post2Img from '../assets/post2.png'
-import post3Img from '../assets/post3.png'
-import profileImg from '../assets/profile.png'
 
 interface PostAttachment {
   image: string

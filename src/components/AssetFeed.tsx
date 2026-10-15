@@ -1,7 +1,8 @@
+import asset1Img from '../assets/models/asset1.png'
+import asset2Img from '../assets/models/asset2.png'
+
 import { FaEye } from "react-icons/fa";
-import asset1Img from '../assets/asset1.png'
-import asset2Img from '../assets/asset2.png'
-import { TbArrowBigUpLine } from "react-icons/tb";
+import { IoIosCube } from "react-icons/io";
 
 interface Asset {
   id: number
@@ -28,10 +29,10 @@ const ASSETS: Asset[] = [
 export default function AssetFeed() {
   return (
     <div className="px-4 md:px-0 pt-4 pb-8">
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-4 md:gap-6">
         {ASSETS.map((asset) => (
           <a href="https://uni.prd.h5.uni2play.com/prod/landing/?to=uni://unicc.com/world/detail?id=FDFLA9X_264" target="_blank" className="cursor-pointer">
-            <div key={asset.id} className="flex flex-col gap-2 cursor-pointer group">
+            <div key={asset.id} className="flex flex-col cursor-pointer group bg-white/5 rounded-xl">
               {/* Cover card */}
               <div className="relative rounded-2xl overflow-hidden">
                 {/* Cover image */}
@@ -45,8 +46,8 @@ export default function AssetFeed() {
                 <div className="absolute inset-0 from-black/70 via-transparent to-transparent" />
 
                 {/* Badge top-left */}
-                <div className="absolute top-2 left-2 flex bg-yellow-500 rounded-full w-6 h-6 flex items-center justify-center">
-                  <TbArrowBigUpLine className="text-black" />
+                <div className="absolute top-2 left-2 flex bg-black/30 rounded-full w-6 h-6 flex items-center justify-center">
+                  <IoIosCube />
                 </div>
 
                 {/* Collect count bottom-left */}
@@ -57,7 +58,7 @@ export default function AssetFeed() {
               </div>
 
               {/* Title below card */}
-              <div className="px-0.5 space-y-2 font-semibold">
+              <div className="px-3 md:px-4 pb-3 md:pb-4 space-y-1 font-semibold">
                 <p className="text-white text-sm line-clamp-2">
                   {asset.title}
                 </p>

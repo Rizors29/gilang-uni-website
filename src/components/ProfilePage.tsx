@@ -6,6 +6,7 @@ import ProfileTabs from './ProfileTabs'
 import PostFeed from './PostFeed'
 import GameFeed from './GameFeed'
 import AssetFeed from './AssetFeed'
+import BadgeFeed from './BadgeFeed'
 import BottomNav from './BottomNav'
 import NavBar from './NavBar'
 
@@ -57,7 +58,13 @@ export default function ProfilePage() {
                   </button>
                 </div>
                 {/* Badges */}
-                <button className="flex items-center gap-1 cursor-pointer">
+                <button
+                  className="flex items-center gap-1 cursor-pointer"
+                  onClick={() => {
+                    setActiveTab('Badges')
+                    document.getElementById('profile-feed')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                >
                   <img src={Badges} alt="Badges" className='w-16' />
                   <IoIosArrowForward className='w-4 h-4 text-white/80' />
                 </button>
@@ -84,12 +91,13 @@ export default function ProfilePage() {
           </aside>
 
           {/* ── RIGHT COLUMN — tabs + feed ──────────────────── */}
-          <div className="flex-1 min-w-0">
+          <div id="profile-feed" className="flex-1 min-w-0">
             <ProfileTabs activeTab={activeTab} onTabChange={setActiveTab} />
             {activeTab === 'Post' && <PostFeed />}
             {activeTab === 'Games' && <GameFeed />}
             {activeTab === 'Assets' && <AssetFeed />}
-            {activeTab !== 'Post' && activeTab !== 'Games' && activeTab !== 'Assets' && (
+            {activeTab === 'Badges' && <BadgeFeed />}
+            {activeTab !== 'Post' && activeTab !== 'Games' && activeTab !== 'Assets' && activeTab !== 'Badges' && (
               <div className="flex items-center justify-center py-16 text-gray-500 text-sm">
                 Belum ada konten {activeTab} saat ini.
               </div>
