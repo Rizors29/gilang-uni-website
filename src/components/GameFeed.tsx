@@ -3,7 +3,6 @@ import game2Img from '../assets/games/game2.png'
 import game3Img from '../assets/games/game3.png'
 
 import { FaEye } from "react-icons/fa";
-import { TbArrowBigUpLine } from "react-icons/tb";
 import { IoEarthSharp } from "react-icons/io5";
 
 interface Game {
