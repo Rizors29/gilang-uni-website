@@ -46,12 +46,12 @@ export default function AssetFeed() {
                 <div className="absolute inset-0 from-black/70 via-transparent to-transparent" />
 
                 {/* Badge top-left */}
-                <div className="absolute top-2 left-2 flex bg-black/30 rounded-full w-6 h-6 flex items-center justify-center">
+                <div className="absolute top-1 left-1 flex bg-black/30 rounded-full w-6 h-6 flex items-center justify-center">
                   <IoIosCube />
                 </div>
 
                 {/* Collect count bottom-left */}
-                <div className="absolute bottom-2 left-2 bg-black/20 py-0.5 px-1 rounded-md flex items-center gap-1 text-white text-xs font-semibold drop-shadow">
+                <div className="absolute bottom-1 left-1 bg-black/20 py-0.5 px-1 rounded-md flex items-center gap-1 text-white text-xs font-semibold drop-shadow">
                   <FaEye className="w-3 h-3" />
                   <span>{asset.collectCount} Collected</span>
                 </div>

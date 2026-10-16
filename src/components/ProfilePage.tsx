@@ -7,6 +7,7 @@ import PostFeed from './PostFeed'
 import GameFeed from './GameFeed'
 import AssetFeed from './AssetFeed'
 import BadgeFeed from './BadgeFeed'
+import BoardFeed from './BoardFeed'
 import BottomNav from './BottomNav'
 import NavBar from './NavBar'
 
@@ -74,11 +75,11 @@ export default function ProfilePage() {
               <div className="flex items-center gap-2 mt-2 flex-wrap">
                 <div className="flex items-center gap-1">
                   <img src={WorldBadge} alt="World badge" className="w-4 h-4" />
-                  <span className="text-white text-sm">Kreator Dunia Bintang</span>
+                  <span className="text-white md:text-sm text-xs">Kreator Dunia Bintang</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <img src={ModelBadge} alt="Model badge" className="w-4 h-4" />
-                  <span className="text-white text-sm">Kreator Model Bintang</span>
+                  <span className="text-white md:text-sm text-xs">Kreator Model Bintang</span>
                 </div>
               </div>
             </div>
@@ -97,7 +98,8 @@ export default function ProfilePage() {
             {activeTab === 'Games' && <GameFeed />}
             {activeTab === 'Assets' && <AssetFeed />}
             {activeTab === 'Badges' && <BadgeFeed />}
-            {activeTab !== 'Post' && activeTab !== 'Games' && activeTab !== 'Assets' && activeTab !== 'Badges' && (
+            {activeTab === 'Boards' && <BoardFeed />}
+            {activeTab !== 'Post' && activeTab !== 'Games' && activeTab !== 'Assets' && activeTab !== 'Badges' && activeTab !== 'Boards' && (
               <div className="flex items-center justify-center py-16 text-gray-500 text-sm">
                 Belum ada konten {activeTab} saat ini.
               </div>

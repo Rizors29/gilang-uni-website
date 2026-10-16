@@ -9,10 +9,7 @@ export default function ProfileStats() {
     <div className="flex items-center px-4 md:px-0 mt-4">
       <div className="flex gap-10 flex-1">
         {stats.map((stat) => (
-          <button
-            key={stat.label}
-            className="flex flex-col items-start hover:opacity-80 transition-opacity cursor-pointer mx-auto md:mx-0"
-          >
+          <button key={stat.label} className="flex flex-col items-start hover:opacity-80 transition-opacity cursor-pointer mx-auto md:mx-0">
             <span className="text-white text-base font-bold leading-tight mx-auto">
               {stat.value}
             </span>
