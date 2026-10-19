@@ -48,10 +48,10 @@ export default function GameDetailPage({ game, onBack }: GameDetailPageProps) {
 
         {/* Creator info */}
         <div className="flex items-center gap-1">
-          <img src={profileImg} alt="Profile image" className='w-8 h-8 me-1' />
-          <span className="text-sm text-white mb-1">Gilang_117</span>
-          <img src={WorldBadge} alt="World badge" className='w-4 h-4 mb-1' />
-          <img src={ModelBadge} alt="Model badge" className='w-4 h-4 mb-1' />
+          <img src={profileImg} alt="Profile image" className='w-8 h-8 me-1 rounded-full' />
+          <span className="text-sm text-white">Gilang_117</span>
+          <img src={WorldBadge} alt="World badge" className='w-4 h-4' />
+          <img src={ModelBadge} alt="Model badge" className='w-4 h-4' />
         </div>
 
         {/* Right icons placeholder */}
