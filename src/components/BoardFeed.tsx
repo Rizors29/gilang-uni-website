@@ -30,8 +30,8 @@ export default function BoardFeed() {
   return (
     <div className="px-4 md:px-0 pt-4 pb-8 space-y-4">
       {BOARDS.map((board) => (
-        <a href="https://uni.prd.h5.uni2play.com/prod/landing/?to=uni://unicc.com/user/detail?uid=FDFLA9X" target='_blank'>
-          <div key={board.id} className="bg-white/5 hover:bg-white/8 rounded-xl p-4 transition-all duration-200 cursor-pointer group">
+        <a key={board.id} href="https://uni.prd.h5.uni2play.com/prod/landing/?to=uni://unicc.com/user/detail?uid=FDFLA9X" target='_blank' className='block'>
+          <div className="bg-white/5 hover:bg-white/8 rounded-xl p-4 transition-all duration-200 cursor-pointer group">
             {/* Title */}
             <h3 className="text-white font-bold text-base italic mb-1">
               {board.title.toUpperCase()}
