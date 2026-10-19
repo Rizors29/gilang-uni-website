@@ -31,7 +31,7 @@ export default function AssetFeed() {
     <div className="px-4 md:px-0 pt-4 pb-8">
       <div className="grid grid-cols-2 gap-4 md:gap-6">
         {ASSETS.map((asset) => (
-          <a href="https://uni.prd.h5.uni2play.com/prod/landing/?to=uni://unicc.com/world/detail?id=FDFLA9X_264" target="_blank" className="cursor-pointer">
+          <a href="https://uni.prd.h5.uni2play.com/prod/landing/?to=uni://unicc.com/user/detail?uid=FDFLA9X" target="_blank" className="cursor-pointer">
             <div key={asset.id} className="flex flex-col cursor-pointer group bg-white/5 rounded-xl">
               {/* Cover card */}
               <div className="relative rounded-2xl overflow-hidden">

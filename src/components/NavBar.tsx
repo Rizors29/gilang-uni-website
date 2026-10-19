@@ -1,8 +1,3 @@
-/**
- * Top navigation bar — hanya tampil di tablet/desktop (hidden on mobile).
- * Mobile menggunakan BottomNav.
- */
-
 import UniIcon from '../assets/uni.png';
 
 export default function NavBar() {

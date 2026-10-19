@@ -8,8 +8,9 @@ import GameFeed from './GameFeed'
 import AssetFeed from './AssetFeed'
 import BadgeFeed from './BadgeFeed'
 import BoardFeed from './BoardFeed'
-import BottomNav from './BottomNav'
 import NavBar from './NavBar'
+import GameDetailPage from './GameDetailPage'
+import type { GameData } from './GameDetailPage'
 
 import WorldBadge from '../assets/world.png'
 import ModelBadge from '../assets/model.png'
@@ -21,28 +22,27 @@ import { LuCopy } from "react-icons/lu";
 
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState('Post')
+  const [selectedGame, setSelectedGame] = useState<GameData | null>(null)
+
+  if (selectedGame) {
+    return <GameDetailPage game={selectedGame} onBack={() => setSelectedGame(null)} />
+  }
 
   return (
     <>
-      {/* ── Desktop top navigation bar ───────────────────── */}
       <NavBar />
 
-      {/* ── Main content ─────────────────────────────────── */}
+      {/* Main content */}
       <div className="max-w-6xl mx-auto px-0 md:px-6 lg:px-8">
 
-        {/* Banner — full width, taller on desktop */}
+        {/* Banner */}
         <ProfileHeader />
-
-        {/*
-          Mobile  : single column
-          Desktop : two columns (left = profile info sticky, right = feed)
-        */}
         <div className="md:flex md:gap-6 md:items-start md:mt-6 md:px-0">
 
-          {/* ── LEFT COLUMN — profile info ─────────────────── */}
+          {/* Profile info */}
           <aside className="md:w-80 lg:w-96 md:flex-shrink-0 md:sticky md:top-6 md:self-start">
 
-            {/* Username + ID (shown under banner on mobile, in sidebar on desktop) */}
+            {/* Username and ID */}
             <div className="px-4 mt-10 md:mt-0 md:px-0">
               <h1 className="text-xl font-bold text-white">Gilang_117</h1>
               <div className="flex items-center gap-2 mt-1 flex-wrap">
@@ -91,11 +91,11 @@ export default function ProfilePage() {
             <ProfileBio />        
           </aside>
 
-          {/* ── RIGHT COLUMN — tabs + feed ──────────────────── */}
+          {/* Tabs and feed */}
           <div id="profile-feed" className="flex-1 min-w-0">
             <ProfileTabs activeTab={activeTab} onTabChange={setActiveTab} />
             {activeTab === 'Post' && <PostFeed />}
-            {activeTab === 'Games' && <GameFeed />}
+            {activeTab === 'Games' && <GameFeed onSelectGame={setSelectedGame} />}
             {activeTab === 'Assets' && <AssetFeed />}
             {activeTab === 'Badges' && <BadgeFeed />}
             {activeTab === 'Boards' && <BoardFeed />}
@@ -105,12 +105,8 @@ export default function ProfilePage() {
               </div>
             )}
           </div>
-
         </div>
       </div>
-
-      {/* ── Mobile bottom navigation ─────────────────────── */}
-      <BottomNav />
     </>
   )
 }
