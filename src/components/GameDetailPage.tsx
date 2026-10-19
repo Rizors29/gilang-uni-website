@@ -59,7 +59,7 @@ export default function GameDetailPage({ game, onBack }: GameDetailPageProps) {
       </div>
 
       {/* Title */}
-      <div className="px-4 pt-2 pb-3 text-center md:flex md:justify-between md:max-w-4xl mx-auto">
+      <div className="px-4 pt-2 pb-3 text-center md:flex md:justify-between md:max-w-4xl mx-auto mt-2">
         <h1 className="text-xl font-bold text-white leading-snug">{game.title}</h1>
 
         {/* Stats row */}
@@ -120,15 +120,17 @@ export default function GameDetailPage({ game, onBack }: GameDetailPageProps) {
 
       <br />
       {/* Bottom action bar */}
-      <div className="fixed bottom-0 lg:bottom-auto lg:mx-80 left-0 right-0 bg-black border-t border-gray-800 px-4 py-3 flex items-center gap-3">
-        <IoAt className='w-7 h-7' />
+      <div className="fixed bottom-0 lg:bottom-auto lg:mx-80 left-0 right-0 bg-black border-t border-white/20 px-3 py-3 flex items-center gap-2 overflow-hidden">
+        {/* Simbol at diberi shrink-0 agar tidak ikut terpotong */}
+        <IoAt className='w-6 h-6 sm:w-7 sm:h-7 text-white shrink-0' />
+
         {/* Comment input placeholder */}
-        <input 
+        <input
           type="text"
           placeholder="Comments"
           value={commentText}
           onChange={(e) => setCommentText(e.target.value)}
-          className="flex-1 bg-white/10 rounded-full px-4 py-2 text-white caret-yellow-400 text-sm cursor-text focus:outline-none placeholder-gray-400"
+          className="min-w-0 flex-1 bg-white/10 rounded-full px-3 sm:px-4 py-2 text-white caret-yellow-400 text-sm cursor-text focus:outline-none placeholder-gray-400"
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               e.preventDefault();
@@ -138,15 +140,15 @@ export default function GameDetailPage({ game, onBack }: GameDetailPageProps) {
         />
 
         {/* Like count */}
-        <button className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors cursor-pointer">
-          <AiOutlineLike className="w-6 h-6" />
-          <span className="text-sm font-semibold">{(game.like / 1000).toFixed(1)}k</span>
+        <button className="flex items-center gap-1 text-white/80 hover:text-white transition-colors cursor-pointer shrink-0">
+          <AiOutlineLike className="w-5 h-5 sm:w-6 sm:h-6" />
+          <span className="text-xs sm:text-sm font-semibold">{(game.like / 1000).toFixed(1)}k</span>
         </button>
 
         {/* Share count */}
-        <button className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors cursor-pointer">
-          <PiShareFat className="w-6 h-6" />
-          <span className="text-sm font-semibold">{game.share}</span>
+        <button className="flex items-center gap-1 text-white/80 hover:text-white transition-colors cursor-pointer shrink-0">
+          <PiShareFat className="w-5 h-5 sm:w-6 sm:h-6" />
+          <span className="text-xs sm:text-sm font-semibold">{game.share}</span>
         </button>
       </div>
 

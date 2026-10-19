@@ -109,29 +109,31 @@ export default function PostFeed() {
 
           {/* Attachment card */}
           {post.attachment && (
-            <div className="mt-3 flex items-center gap-3 border border-white/20 rounded-2xl overflow-hidden hover:border-gray-600/60 transition-colors cursor-pointer">
-              {/* Thumbnail */}
-              <div className="w-24 h-20 p-1">
-                <img
-                  src={post.attachment.image}
-                  alt={post.attachment.title}
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </div>
-              {/* Info */}
-              <div className="flex flex-col gap-1 py-2 pr-3">
-                <span className="text-white text-sm font-semibold leading-snug">
-                  {post.attachment.title}
-                </span>
-                <div className="flex items-center gap-1">
-                  <img src={profileImg} alt="Profile image" className='w-4 h-4' />
-                  <span className="text-gray-300 text-xs">{post.attachment.username}</span>
+            <a href="https://uni.prd.h5.uni2play.com/prod/landing/?to=uni://unicc.com/user/detail?uid=FDFLA9X" target='_blank'>
+              <div className="mt-3 flex items-center gap-3 border border-white/20 rounded-2xl overflow-hidden hover:border-gray-600/60 transition-colors cursor-pointer">
+                {/* Thumbnail */}
+                <div className="w-24 h-20 p-1">
+                  <img
+                    src={post.attachment.image}
+                    alt={post.attachment.title}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
                 </div>
-                <span className="text-gray-500 text-xs">
-                  {post.attachment.countLabel}·{post.attachment.collectCount}
-                </span>
+                {/* Info */}
+                <div className="flex flex-col gap-1 py-2 pr-3">
+                  <span className="text-white text-sm font-semibold leading-snug">
+                    {post.attachment.title}
+                  </span>
+                  <div className="flex items-center gap-1">
+                    <img src={profileImg} alt="Profile image" className='w-4 h-4' />
+                    <span className="text-gray-300 text-xs">{post.attachment.username}</span>
+                  </div>
+                  <span className="text-gray-500 text-xs">
+                    {post.attachment.countLabel}·{post.attachment.collectCount}
+                  </span>
+                </div>
               </div>
-            </div>
+            </a>
           )}
 
           {/* Post actions */}
